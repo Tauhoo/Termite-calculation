@@ -11,7 +11,7 @@ function createWindow() {
   })
 
   // and load the index.html of the app.
-  win.loadFile("./html/index.html")
+  win.loadFile("./termite_html/build/index.html")
 }
 
 app.whenReady().then(createWindow)

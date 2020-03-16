@@ -22,6 +22,11 @@ const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media (max-width: 600px) {
+    * {
+      text-align: center;
+    }
+  }
   width: 100%;
 `
 
@@ -30,6 +35,9 @@ const SubTextContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   width: 100%;
   color: white;
+  @media (max-width: 600px) {
+    justify-items: center;
+  }
   grid-gap: 10px;
 `
 
@@ -41,6 +49,7 @@ export default () => (
     <TextContainer>
       <h1 style={{ color: "white" }}>Termite Calculating Program</h1>
       <h2 style={{ color: "white" }}>โปรแกรมคำนวณตำแหน่งปลวก</h2>
+      <br></br>
       <SubTextContainer>
         <div>
           <p>Department of Mechanical Engineering </p>
