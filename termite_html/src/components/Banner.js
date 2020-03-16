@@ -8,7 +8,9 @@ const Container = styled.div`
   grid-gap: 10px;
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
+    padding: 10px;
   }
+  box-sizing: border-box;
 `
 const ContainerLogo = styled.div`
   display: flex;

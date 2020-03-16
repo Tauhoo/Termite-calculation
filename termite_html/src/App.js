@@ -37,8 +37,8 @@ const Text = styled.div`
 
 const WorkContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 30px;
   @media (max-width: 760px) {
     grid-template-columns: 1fr;
   }
