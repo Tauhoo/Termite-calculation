@@ -16,9 +16,14 @@ const Container = styled.div`
   transition: 0.3s;
 `
 
-export default ({ radius, top, left, color }) => (
-  <Container radius={radius} top={top} left={left} color={color || "#9b59b6"}>
-    <Distance width={radius} top='75%' left='50%' deg={-90}>
+export default ({ radius, top, left, color, scale }) => (
+  <Container
+    radius={radius * scale}
+    top={top}
+    left={left}
+    color={color || "#9b59b6"}
+  >
+    <Distance width={radius * scale} top='75%' left='50%' deg={-90}>
       {radius}m
     </Distance>
   </Container>

@@ -41,9 +41,10 @@ const FigureContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.3s;
 `
 
-export default ({ W, L, R1, R2 }) => {
+export default ({ W, L, R1, R2, scale }) => {
   const max_radius = Math.max(R1, R2)
   const container_height = Math.max(W, max_radius) + max_radius
   const container_width =
@@ -53,10 +54,10 @@ export default ({ W, L, R1, R2 }) => {
   return (
     <Container>
       <FigureContainer
-        height={container_height * 2}
-        width={container_width * 2}
+        height={container_height * 2 * scale}
+        width={container_width * 2 * scale}
       >
-        <Square W={W} L={L} R1={R1} R2={R2}></Square>
+        <Square W={W} L={L} R1={R1} R2={R2} scale={scale}></Square>
       </FigureContainer>
     </Container>
   )

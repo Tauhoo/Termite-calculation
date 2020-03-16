@@ -3,6 +3,7 @@ import { InputNumber } from "antd"
 import styled from "styled-components"
 import Figure from "./components/Figure"
 import Banner from "./components/Banner"
+import { Slider } from "antd"
 
 import "antd/dist/antd.css"
 
@@ -55,6 +56,7 @@ export default class extends Component {
     L: 300,
     R1: 100,
     R2: 80,
+    scale: 1,
   }
   render() {
     return (
@@ -104,6 +106,15 @@ export default class extends Component {
                   formatter={value => `${value}m`}
                   parser={value => value.replace("m", "")}
                 ></InputNumber>
+              </InputContainer>
+              <InputContainer>
+                <Text>ขนาดแสดงผล</Text>
+                <Slider
+                  min={1}
+                  max={5}
+                  step={0.5}
+                  onChange={scale => this.setState({ scale })}
+                ></Slider>
               </InputContainer>
             </ConfigContainer>
           </Center>
