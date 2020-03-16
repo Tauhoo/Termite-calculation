@@ -2,11 +2,12 @@ import React, { Component } from "react"
 import { InputNumber } from "antd"
 import styled from "styled-components"
 import Figure from "./components/Figure"
+import Banner from "./components/Banner"
 
 import "antd/dist/antd.css"
 
 const Container = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background-color: #1d7170;
   box-sizing: border-box;
@@ -58,6 +59,9 @@ export default class extends Component {
   render() {
     return (
       <Container>
+        <Banner></Banner>
+        <br />
+        <br />
         <WorkContainer>
           <Center>
             <ConfigContainer>
@@ -67,30 +71,38 @@ export default class extends Component {
                   placeholder='W'
                   onChange={value => this.setState({ W: value })}
                   defaultValue={100}
+                  formatter={value => `${value}m`}
+                  parser={value => value.replace("m", "")}
                 ></InputNumber>
               </InputContainer>
               <InputContainer>
                 <Text>ความยาวห้อง</Text>
                 <InputNumber
                   placeholder='L'
-                  onChange={value => this.setState({ W: value })}
-                  defaultValue={100}
+                  onChange={value => this.setState({ L: value })}
+                  defaultValue={300}
+                  formatter={value => `${value}m`}
+                  parser={value => value.replace("m", "")}
                 ></InputNumber>
               </InputContainer>
               <InputContainer>
                 <Text>ระยะจากเซนเซอร์ตัวซ้าย</Text>
                 <InputNumber
                   placeholder='R1'
-                  onChange={value => this.setState({ W: value })}
+                  onChange={value => this.setState({ R1: value })}
                   defaultValue={100}
+                  formatter={value => `${value}m`}
+                  parser={value => value.replace("m", "")}
                 ></InputNumber>
               </InputContainer>
               <InputContainer>
                 <Text>ระยะจากเซนเซอร์ตัวขวา</Text>
                 <InputNumber
                   placeholder='R2'
-                  onChange={value => this.setState({ W: value })}
-                  defaultValue={100}
+                  onChange={value => this.setState({ R2: value })}
+                  defaultValue={80}
+                  formatter={value => `${value}m`}
+                  parser={value => value.replace("m", "")}
                 ></InputNumber>
               </InputContainer>
             </ConfigContainer>

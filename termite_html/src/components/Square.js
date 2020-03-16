@@ -6,8 +6,9 @@ import Distance from "./Distance"
 const Container = styled.div`
   height: ${({ height }) => height}px;
   width: ${({ width }) => width}px;
-  background-color: #ecf0f1;
+  background-color: #bdc3c7;
   position: relative;
+  transition: 0.3s;
 `
 
 export default ({ W, L, R1, R2 }) => (

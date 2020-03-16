@@ -11,6 +11,7 @@ const Container = styled.div`
   position: absolute;
   transform: translate(-50%, -50%) rotate(${({ deg }) => deg}deg);
   z-index: 1000;
+  transition: 0.3s;
 `
 
 const VerticalLine = styled.div`

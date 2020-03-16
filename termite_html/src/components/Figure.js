@@ -3,9 +3,36 @@ import styled from "styled-components"
 import Square from "./Square"
 
 const Container = styled.div`
-  height: 100%;
+  height: 400px;
   width: 100%;
   overflow: scroll;
+  border-style: solid;
+  @media (max-width: 760px) {
+    margin-top: 30px;
+  }
+  border-color: white;
+  border-radius: 10px;
+  background-color: white;
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: white;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #2c3e50;
+    border-radius: 20px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #16a085;
+  }
 `
 
 const FigureContainer = styled.div`
