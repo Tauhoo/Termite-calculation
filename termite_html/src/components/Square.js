@@ -32,10 +32,15 @@ export default ({ W, L, R1, R2, scale }) => (
     <Circle
       radius={R1}
       scale={scale}
-      top='100%'
+      top={`calc(100% + 1px * ${scale})`}
       left='25%'
       color='#f1c40f'
     ></Circle>
-    <Circle radius={R2} scale={scale} top='100%' left='75%'></Circle>
+    <Circle
+      radius={R2}
+      scale={scale}
+      top={`calc(100% + 1px * ${scale})`}
+      left='75%'
+    ></Circle>
   </Container>
 )

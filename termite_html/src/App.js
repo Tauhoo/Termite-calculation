@@ -52,11 +52,11 @@ const Center = styled.div`
 `
 export default class extends Component {
   state = {
-    W: 100,
-    L: 300,
-    R1: 100,
-    R2: 80,
-    scale: 1,
+    W: 2,
+    L: 3,
+    R1: 1,
+    R2: 1,
+    scale: 150,
   }
   render() {
     return (
@@ -72,7 +72,7 @@ export default class extends Component {
                 <InputNumber
                   placeholder='W'
                   onChange={value => this.setState({ W: value })}
-                  defaultValue={100}
+                  defaultValue={2}
                   formatter={value => `${value}m`}
                   parser={value => value.replace("m", "")}
                 ></InputNumber>
@@ -82,7 +82,7 @@ export default class extends Component {
                 <InputNumber
                   placeholder='L'
                   onChange={value => this.setState({ L: value })}
-                  defaultValue={300}
+                  defaultValue={3}
                   formatter={value => `${value}m`}
                   parser={value => value.replace("m", "")}
                 ></InputNumber>
@@ -92,7 +92,7 @@ export default class extends Component {
                 <InputNumber
                   placeholder='R1'
                   onChange={value => this.setState({ R1: value })}
-                  defaultValue={100}
+                  defaultValue={1}
                   formatter={value => `${value}m`}
                   parser={value => value.replace("m", "")}
                 ></InputNumber>
@@ -102,7 +102,7 @@ export default class extends Component {
                 <InputNumber
                   placeholder='R2'
                   onChange={value => this.setState({ R2: value })}
-                  defaultValue={80}
+                  defaultValue={1}
                   formatter={value => `${value}m`}
                   parser={value => value.replace("m", "")}
                 ></InputNumber>
@@ -110,10 +110,12 @@ export default class extends Component {
               <InputContainer>
                 <Text>ขนาดแสดงผล</Text>
                 <Slider
-                  min={1}
-                  max={5}
-                  step={0.5}
+                  min={10}
+                  max={1000}
+                  step={25}
+                  defaultValue={150}
                   onChange={scale => this.setState({ scale })}
+                  tipFormatter={value => `1m : ${value}px`}
                 ></Slider>
               </InputContainer>
             </ConfigContainer>
