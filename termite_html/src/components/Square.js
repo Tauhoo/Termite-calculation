@@ -13,16 +13,17 @@ const Container = styled.div`
   position: relative;
   transition: 0.3s;
 `
-const calculate_cut_point = (R1, R2) => {
-  if (R1 + R2 < 1.5) return null
-  let x = (R1 ** 2 - R2 ** 2 + 2.25) / 3
+const calculate_cut_point = (W, L, R1, R2) => {
+  const distance = L / 2
+  if (R1 + R2 < distance) return null
+  let x = (R1 ** 2 - R2 ** 2 + distance ** 2) / L
   let y = Math.sqrt(R1 ** 2 - x ** 2)
   if (isNaN(x) || isNaN(y)) return null
   return { x, y }
 }
 
 export default ({ W, L, R1, R2, scale }) => {
-  const ccp = calculate_cut_point(R1, R2)
+  const ccp = calculate_cut_point(W, L, R1, R2)
   console.log(ccp)
 
   return (
@@ -38,10 +39,10 @@ export default ({ W, L, R1, R2, scale }) => {
         top='calc(100% - 10px)'
         left='calc(25% / 2)'
       >
-        {L / 4}m (L/2)
+        {L / 4}m (L/4)
       </Distance>
       <Distance width={(L / 4) * scale} top='calc(100% - 10px)' left='87.5%'>
-        {L / 4}m (L/2)
+        {L / 4}m (L/4)
       </Distance>
       <Tooltip title={`(0.000m, 0.000m)`}>
         <Point radius={5} scale={scale} top={`0px`} left={`0px)`}></Point>
@@ -49,9 +50,9 @@ export default ({ W, L, R1, R2, scale }) => {
       {ccp === null ? null : (
         <>
           <Tooltip
-            title={`(${(ccp.x + 0.75).toFixed(3)}m, ${(
+            title={`(${(ccp.x + L / 4).toFixed(3)}m, ${(
               -1 *
-              (3 - ccp.y)
+              (L - ccp.y)
             ).toFixed(3)}m)`}
           >
             <Point
@@ -62,9 +63,9 @@ export default ({ W, L, R1, R2, scale }) => {
             ></Point>
           </Tooltip>
           <Tooltip
-            title={`(${(ccp.x + 0.75).toFixed(3)}m, ${(
+            title={`(${(ccp.x + L / 4).toFixed(3)}m, ${(
               -1 *
-              (3 + ccp.y)
+              (L + ccp.y)
             ).toFixed(3)}m)`}
           >
             <Point
