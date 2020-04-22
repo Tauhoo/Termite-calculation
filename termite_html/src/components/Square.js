@@ -52,7 +52,7 @@ export default ({ W, L, R1, R2, scale }) => {
           <Tooltip
             title={`(${(ccp.x + L / 4).toFixed(3)}m, ${(
               -1 *
-              (L - ccp.y)
+              (W + 1 - ccp.y)
             ).toFixed(3)}m)`}
           >
             <Point
@@ -65,7 +65,7 @@ export default ({ W, L, R1, R2, scale }) => {
           <Tooltip
             title={`(${(ccp.x + L / 4).toFixed(3)}m, ${(
               -1 *
-              (L + ccp.y)
+              (W + 1 + ccp.y)
             ).toFixed(3)}m)`}
           >
             <Point
